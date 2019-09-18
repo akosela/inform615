@@ -43,10 +43,10 @@ install:
 	install -d $(DESTDIR)$(LIB)/{bin,demos,minform,tutor}
 	install -c -m 755 $(MAIN) $(DESTDIR)$(PREFIX)/bin
 	install -c -m 755 bin/i6 $(DESTDIR)$(PREFIX)/bin
-	install -c -m 755 bin/a8.bin $(DESTDIR)$(LIB)/bin
-	install -c -m 755 demos/minform.inf $(DESTDIR)$(LIB)/demos
-	install -c -m 755 minform/* $(DESTDIR)$(LIB)/minform
-	install -c -m 755 tutor/* $(DESTDIR)$(LIB)/tutor
+	install -c -m 644 bin/a8.bin $(DESTDIR)$(LIB)/bin
+	install -c -m 644 demos/minform.inf $(DESTDIR)$(LIB)/demos
+	install -c -m 644 minform/* $(DESTDIR)$(LIB)/minform
+	install -c -m 644 tutor/* $(DESTDIR)$(LIB)/tutor
 	install -c -m 644 i6.6 $(DESTDIR)$(MANDIR)
 	gzip $(DESTDIR)$(MANDIR)/i6.6
 	ln -s $(LIB)/minform/grammar.h $(DESTDIR)$(LIB)/minform/Grammar.h
