@@ -1,0 +1,24 @@
+
+Inform 6.15 for Atari XL/XE
+---------------------------
+
+This is Inform 6.15, the last release that supported Z-machine version 3
+suitable for 8-bit micros.  This port specifically aims to produce
+playable Atari XL/XE MD disk images.
+
+It is using mInform 1.1 library.
+
+Usage
+-----
+
+  $ i6 game.inf
+
+This will create game.z3 and game.atr.
+
+Resources
+---------
+
+http://www.inform-fiction.org
+http://www.brasslantern.org
+http://www.ifarchive.org
+http://en.wikipedia.org/wiki/Interactive_fiction

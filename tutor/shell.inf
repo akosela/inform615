@@ -1,0 +1,23 @@
+! ----------------------------------------------------------------------------
+!  And when he hath the kernel eat,
+!    Who doth not fling away the Shell?  - John Donne, "Community"
+! ----------------------------------------------------------------------------
+
+Constant Story "SHELL";
+Constant Headline "^An Interactive Skeleton^\
+             Copyright (c) 1994 by (your name here).^";
+
+Include "Parser";
+Include "VerbLib";
+
+Object Blank_Room "Blank Room"
+  with description "An empty room."
+  has  light;
+
+[ Initialise;
+  location = Blank_Room;
+  print "^^^^^Welcome to the shell...^^";
+];
+
+Include "Grammar";
+end;
