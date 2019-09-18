@@ -47,12 +47,12 @@ install:
 	install -c -m 755 demos/minform.inf $(DESTDIR)$(LIB)/demos
 	install -c -m 755 minform/* $(DESTDIR)$(LIB)/minform
 	install -c -m 755 tutor/* $(DESTDIR)$(LIB)/tutor
-	install -c -m 644 $(MAIN).6 $(DESTDIR)$(MANDIR)
-	gzip $(DESTDIR)$(MANDIR)/$(MAIN).6
+	install -c -m 644 i6.6 $(DESTDIR)$(MANDIR)
+	gzip $(DESTDIR)$(MANDIR)/i6.6
 
 .PHONY: uninstall
 uninstall:
 	rm -f $(DESTDIR)$(PREFIX)/bin/$(MAIN)
 	rm -f $(DESTDIR)$(PREFIX)/bin/i6
-	rm -f $(DESTDIR)$(MANDIR)/$(MAIN).6.gz
+	rm -f $(DESTDIR)$(MANDIR)/i6.6.gz
 	rm -rf $(DESTDIR)$(LIB)
