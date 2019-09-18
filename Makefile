@@ -49,9 +49,9 @@ install:
 	install -c -m 755 tutor/* $(DESTDIR)$(LIB)/tutor
 	install -c -m 644 i6.6 $(DESTDIR)$(MANDIR)
 	gzip $(DESTDIR)$(MANDIR)/i6.6
-	ln -s $(DESTDIR)$(LIB)/minform/grammar.h $(DESTDIR)$(LIB)/minform/Grammar.h
-	ln -s $(DESTDIR)$(LIB)/minform/parser.h $(DESTDIR)$(LIB)/minform/Parser.h
-	ln -s $(DESTDIR)$(LIB)/minform/verblib.h $(DESTDIR)$(LIB)/minform/VerbLib.h
+	ln -s $(LIB)/minform/grammar.h $(DESTDIR)$(LIB)/minform/Grammar.h
+	ln -s $(LIB)/minform/parser.h $(DESTDIR)$(LIB)/minform/Parser.h
+	ln -s $(LIB)/minform/verblib.h $(DESTDIR)$(LIB)/minform/VerbLib.h
 
 .PHONY: uninstall
 uninstall:
