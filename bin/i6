@@ -25,9 +25,9 @@
 #  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 #  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-inform=/usr/ports/akosela/inform615/inform
-lib=/usr/ports/akosela/inform615/minform
-a8bin=/usr/ports/akosela/inform615/bin/a8.bin
+inform=/usr/bin/inform
+lib=/usr/share/inform615/minform
+a8bin=/usr/share/inform615/bin/a8.bin
 v=-v3
 
 main()

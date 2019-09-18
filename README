@@ -8,6 +8,14 @@ playable Atari XL/XE MD disk images.
 
 It is using mInform 1.1 library.
 
+Building
+--------
+
+Read Makefile.  In most scenarios you just need to issue:
+
+  $ make
+  $ make install
+
 Usage
 -----
 
