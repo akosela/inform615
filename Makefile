@@ -1,7 +1,8 @@
 # Makefile
+SHELL := /bin/bash
 CC = gcc
 CFLAGS = -O2 -ansi
-V=0
+V = 0
 
 PREFIX = /usr
 MANDIR = $(PREFIX)/share/man/man6
