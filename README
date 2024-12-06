@@ -1,17 +1,40 @@
 
-Inform 6.15 for Atari XL/XE
+RetroInform
 ---------------------------
 
-This is Inform 6.15, the last release that supported Z-machine version 3
-suitable for 8-bit micros.  This port specifically aims to produce
-playable Atari XL/XE MD disk images.
+Recently, many projects have emerged focusing on retro computers. This is
+one of them. Specifically, it aims to assist in developing text adventure
+games for Atari 8-bit machines using the Inform 6 programming language.
 
-It is using mInform 1.1 library.
+Inform has a long history, dating back to 1993, but its roots are even older,
+tracing back to Infocom and its Z-machine standard.
+
+Several active Inform projects are focused on 8-bit micros. PunyInform is
+redefining the standard Inform 6 library while leveraging a modern Inform
+compiler. In contrast, the RetroInform project specifically uses the older
+Inform 6.15 compiler from the late 1990s. The reason is straightforward:
+it aims to ensure maximum compatibility with older Inform game sources. The
+late 1990s marked a peak period for Inform 6 productivity. We appreciate
+the simplicity of that era compared to the complexity and "bloat" of
+modern tools.
+
+This project provides a complete development environment for Unix. You
+can write, debug, and play your interactive fiction games directly in the
+terminal. It also supports Atari 8-bit machines, allowing you to play your
+games on original hardware or through an emulator.
+
+Currently only Z-machine version 3 (ZIP) is supported on standard Atari
+8-bit machines with 64KB of RAM. Later versions require extended memory
+and do not work well with the default text mode. We prefer the original
+text mode over any software-based video emulation.
+
+You can also create Z-machine version 5 (XZIP) games and play them in a Unix
+terminal or MS-DOS.
 
 Building
 --------
 
-Read Makefile.  In most scenarios you just need to issue:
+Read Makefile. In most scenarios you just need to issue:
 
   $ make
   $ make install
@@ -19,14 +42,19 @@ Read Makefile.  In most scenarios you just need to issue:
 Usage
 -----
 
-  $ i6 game.inf
+  $ inf game.inf
 
 This will create game.z3 and game.atr.
+
+Manual
+------
+
+  $ man inf
 
 Resources
 ---------
 
-http://www.inform-fiction.org
-http://www.brasslantern.org
-http://www.ifarchive.org
-http://en.wikipedia.org/wiki/Interactive_fiction
+https://www.inform-fiction.org
+https://www.ifarchive.org
+https://www.ifwiki.org
+https://en.wikipedia.org/wiki/Interactive_fiction

@@ -47,13 +47,13 @@ install:
 	install -d $(DESTDIR)$(LIB)
 	install -d $(DESTDIR)$(LIB)/{bin,demos,minform,tutor}
 	install -c -m 755 $(MAIN) $(DESTDIR)$(PREFIX)/bin
-	install -c -m 755 bin/i6 $(DESTDIR)$(PREFIX)/bin
+	install -c -m 755 bin/inf $(DESTDIR)$(PREFIX)/bin
 	install -c -m 644 bin/a8.bin $(DESTDIR)$(LIB)/bin
 	install -c -m 644 demos/minform.inf $(DESTDIR)$(LIB)/demos
 	install -c -m 644 minform/* $(DESTDIR)$(LIB)/minform
 	install -c -m 644 tutor/* $(DESTDIR)$(LIB)/tutor
-	install -c -m 644 i6.6 $(DESTDIR)$(MANDIR)
-	gzip $(DESTDIR)$(MANDIR)/i6.6
+	install -c -m 644 inf.6 $(DESTDIR)$(MANDIR)
+	gzip $(DESTDIR)$(MANDIR)/inf.6
 ifeq ($(OS), Darwin)
 	@mv $(LIB)/minform/grammar.h $(DESTDIR)$(LIB)/minform/grammar.h.tmp
 	@mv $(LIB)/minform/grammar.h.tmp $(DESTDIR)$(LIB)/minform/Grammar.h
@@ -70,6 +70,6 @@ endif
 .PHONY: uninstall
 uninstall:
 	rm -f $(DESTDIR)$(PREFIX)/bin/$(MAIN)
-	rm -f $(DESTDIR)$(PREFIX)/bin/i6
-	rm -f $(DESTDIR)$(MANDIR)/i6.6.gz
+	rm -f $(DESTDIR)$(PREFIX)/bin/inf
+	rm -f $(DESTDIR)$(MANDIR)/inf.6.gz
 	rm -rf $(DESTDIR)$(LIB)
