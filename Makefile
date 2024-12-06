@@ -1,10 +1,15 @@
 # Makefile
 SHELL := /bin/bash
+OS := $(shell uname -s)
+ifeq ($(findstring gcc, $(CC)), gcc)
+	CFLAGS = -O2 -ansi
+else
+	CFLAGS = -O2 -std=c89
+endif
 CC = gcc
-CFLAGS = -O2 -ansi
 V = 0
 
-PREFIX = /usr
+PREFIX = /usr/local
 MANDIR = $(PREFIX)/share/man/man6
 LIB = $(PREFIX)/share/inform615
 MAIN = inform
@@ -49,9 +54,18 @@ install:
 	install -c -m 644 tutor/* $(DESTDIR)$(LIB)/tutor
 	install -c -m 644 i6.6 $(DESTDIR)$(MANDIR)
 	gzip $(DESTDIR)$(MANDIR)/i6.6
-	ln -s $(LIB)/minform/grammar.h $(DESTDIR)$(LIB)/minform/Grammar.h
-	ln -s $(LIB)/minform/parser.h $(DESTDIR)$(LIB)/minform/Parser.h
-	ln -s $(LIB)/minform/verblib.h $(DESTDIR)$(LIB)/minform/VerbLib.h
+ifeq ($(OS), Darwin)
+	@mv $(LIB)/minform/grammar.h $(DESTDIR)$(LIB)/minform/grammar.h.tmp
+	@mv $(LIB)/minform/grammar.h.tmp $(DESTDIR)$(LIB)/minform/Grammar.h
+	@mv $(LIB)/minform/parser.h $(DESTDIR)$(LIB)/minform/parser.h.tmp
+	@mv $(LIB)/minform/parser.h.tmp $(DESTDIR)$(LIB)/minform/Parser.h
+	@mv $(LIB)/minform/verblib.h $(DESTDIR)$(LIB)/minform/verblib.h.tmp
+	@mv $(LIB)/minform/verblib.h.tmp $(DESTDIR)$(LIB)/minform/VerbLib.h
+else
+	@ln -s $(LIB)/minform/grammar.h $(DESTDIR)$(LIB)/minform/Grammar.h
+	@ln -s $(LIB)/minform/parser.h $(DESTDIR)$(LIB)/minform/Parser.h
+	@ln -s $(LIB)/minform/verblib.h $(DESTDIR)$(LIB)/minform/VerbLib.h
+endif
 
 .PHONY: uninstall
 uninstall:

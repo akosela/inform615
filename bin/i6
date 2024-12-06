@@ -25,9 +25,9 @@
 #  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 #  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-inform=/usr/bin/inform
-lib=/usr/share/inform615/minform
-a8bin=/usr/share/inform615/bin/a8.bin
+inform=/usr/local/bin/inform
+lib=/usr/local/share/inform615/minform
+a8bin=/usr/local/share/inform615/bin/a8.bin
 v=-v3
 
 main()
@@ -60,7 +60,7 @@ if [ ! -z `echo $1 | grep '.inf'` ]; then
 	main
 elif [ -z "$1" ]; then
 	usage
-fi	
+fi
 
 while getopts 5:h opts
 do
